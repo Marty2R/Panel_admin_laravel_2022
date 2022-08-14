@@ -1,0 +1,162 @@
+header {
+  background-color: #212529;
+  color: #FFFFFF;
+  min-width: 300px;
+  height: 100%;
+  position: fixed;
+}
+
+header h1 {
+  margin: 0px;
+  padding: 10px 20px;
+}
+
+header nav {
+  margin: 20px 0px;
+}
+
+header nav ul {
+  padding: 0px;
+  margin: 0px;
+}
+
+header nav ul li {
+  list-style: none;
+  margin: 15px;
+}
+
+header nav ul li p {
+  font-size: 1rem;
+  color: #ffffff8a;
+}
+
+header nav ul li a {
+  text-decoration: none;
+  color: #ffffff8a;
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 1.2rem;
+}
+
+header nav ul li a:hover {
+  color: white;
+}
+
+header nav ul li .signout:hover {
+  color: red;
+}
+
+.header_div {
+  text-align: right;
+  background-color: #212529;
+  color: #FFFFFF;
+  padding: 10px;
+  margin: 0px;
+}
+
+.header_div #search-bar {
+  display: inline-block;
+}
+
+.header_div #search-bar input {
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.header_div #search-bar button {
+  background-color: #0F6DFD;
+  color: #FFFFFF;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  margin-left: -5px;
+}
+
+.header_div #search-bar button:hover {
+  cursor: pointer;
+}
+
+.header_div #user {
+  margin: 30px;
+  color: #FFFFFF;
+}
+
+.header_div p {
+  margin: 5px;
+  font-size: 1.7rem;
+  text-align: left;
+}
+
+#home {
+  padding: 0px 20px;
+}
+
+#home h1 {
+  font-size: 3rem;
+}
+
+#home .box_content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  margin: 20px -10px;
+}
+
+#home .box_content .box {
+  width: 100%;
+  border-radius: 5px;
+  margin: 10px;
+}
+
+#home .box_content .box h2 {
+  margin: 0px;
+  color: #FFFFFF;
+}
+
+#home .box_content .box a {
+  color: #FFFFFF;
+}
+
+#home .box_content .box div {
+  padding: 20px;
+}
+
+#home .box_content .box div h2 {
+  font-size: 1.2rem;
+}
+
+#home .box_content .box .bottom_div {
+  border-top: solid 1px gray;
+  padding: 10px;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+body main {
+  width: 1700px;
+  max-width: 100%;
+  margin-left: 300px;
+}
+/*# sourceMappingURL=style.css.map */

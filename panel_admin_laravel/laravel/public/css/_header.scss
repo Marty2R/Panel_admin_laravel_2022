@@ -1,0 +1,65 @@
+header {
+
+    background-color: #212529;
+    color: #FFFFFF;
+    min-width: 300px;
+    height: 100%;
+    position: fixed;
+
+    h1 {
+
+        margin: 0px;
+        padding: 10px 20px;
+
+    }
+
+    nav {
+
+        margin: 20px 0px;
+
+        ul {
+
+            padding: 0px;
+            margin: 0px;
+
+            li {
+
+                list-style: none;
+                margin: 15px;
+                
+                p {
+
+                    font-size: 1rem;
+                    color: #ffffff8a;
+
+                }
+
+                a {
+
+                    text-decoration: none;
+                    color: #ffffff8a;
+                    display: inline-block;
+                    padding: 10px 20px;
+                    font-size: 1.2rem;
+
+                    &:hover {
+
+                        color: white;
+
+                    }
+
+                }
+
+                .signout:hover {
+
+                    color: red;
+
+                }
+
+            }
+
+        }
+
+    }
+
+}

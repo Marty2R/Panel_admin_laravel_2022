@@ -1,0 +1,31 @@
+@import 'header', 'index', 'login';
+
+// Colors :
+$black : #212529;
+$white : #FFFFFF;
+$blue : #0F6DFD;
+$yellow : #FEC107;
+$green : #1A8754;
+$red : #DC3544;
+
+* {
+
+    box-sizing: border-box;
+
+}
+
+body {
+
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: row;
+    
+    main {
+
+        width: 1700px;
+        max-width: 100%;
+        margin-left: 300px;
+
+    }
+
+}
