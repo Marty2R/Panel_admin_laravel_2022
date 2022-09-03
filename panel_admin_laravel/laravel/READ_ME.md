@@ -3,11 +3,14 @@
 # Login Admin : 
 - Name : Admin
 - Last name : Admin
-- Email : admin1@edenschool.fr
-- Password : Adminpassword
+- Email : admin@edenschool.fr
+- Password : Password
 
 # Login User 1 : 
-- Name : User
-- Last name : User
-- Email : user.test@edenschool.fr
+- Name : Marty
+- Last name : Marty
+- Email : marty.rabatel2@gmail.com
 - Password : password
+
+# Admin dashboard :
+http://127.0.0.1:8000/admin/dashboard

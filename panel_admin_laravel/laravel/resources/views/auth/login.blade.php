@@ -44,16 +44,16 @@
                     </label>
                 </div>
 
-                <div class="flex items-center justify-end mt-5">
-                    @if (Route::has('password.request'))
-                        <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('password.request') }}">
-                            {{ __('Forgot your password?') }}
-                        </a>
-                    @endif
+                <div class="mt-5">
 
-                    <x-button class="ml-3">
+                    <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('password.request') }}">
+                        {{ __('Forgot your password?') }}
+                    </a>
+
+                    <button class="btn btn-outline-primary">
                         {{ __('Log in') }}
-                    </x-button>
+                    </button>
+
                 </div>
 
                 <div class="border-top-2 border-secondary m-5">

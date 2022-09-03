@@ -18,6 +18,7 @@
     <body>
 
         @auth
+
         <header>
 
             <h1>User Panel</h1>
@@ -30,7 +31,7 @@
 
                     <li><a href="/dashboard"> <i class="fas fa-chart-line"></i> Dashboard</a></li>
                     <li><a href="/profile"> <i class="fas fa-users"></i> Profile</a></li>
-                    <li><a href="/change_password"> <i class="fas fa-calendar"></i> Change Password</a></li>
+                    <li><a href="/change_password"> <i class="fas fa-key"></i> Change Password</a></li>
                     <!-- Déconnection -->
                     <li>
                         <form method="POST" action="{{ route('logout') }}">
@@ -38,21 +39,61 @@
 
                             <x-dropdown-link :href="route('logout')"
                                     onclick="event.preventDefault();
-                                                this.closest('form').submit();">
+                                        this.closest('form').submit();">
                                 {{ __('Log Out') }}
                             </x-dropdown-link>
                             
                         </form>
                     </li>
+                    <li><a href="/documentation">Documentation Laravel</a></li>
 
                 </ul>
 
             </nav>
 
         </header>
+
+        @if(Auth::user()->is_admin == 1)
+
+        <header>
+
+            <h1>Admin Panel</h1>
+
+            <nav>
+
+                <ul>
+
+                    <li><p>CORE</p></li>
+
+                    <li><a href="/admin/dashboard"> <i class="fas fa-chart-line"></i> Dashboard</a></li>
+                    <li><a href="/admin/user-manage"> <i class="fas fa-users"></i> Manage Users</a></li>
+                    <li><a href="/date-report"> <i class="fas fa-calendar"></i> B/w Dates Repost</a></li>
+                    <!-- Déconnection -->
+                    <li>
+                        <form method="POST" action="{{ route('logout') }}">
+                            @csrf
+
+                            <x-dropdown-link :href="route('logout')"
+                                    onclick="event.preventDefault();
+                                        this.closest('form').submit();">
+                                {{ __('Log Out') }}
+                            </x-dropdown-link>
+                            
+                        </form>
+                    </li>
+                    <li><a href="/documentation">Documentation Laravel</a></li>
+
+                </ul>
+
+            </nav>
+
+        </header>
+
+        @endif
+
         @endauth
 
-        <main class="main">
+        <main class="main" @auth style="margin-left : 300px" @endauth>
 
             @yield('content')
 

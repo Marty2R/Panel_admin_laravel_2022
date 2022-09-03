@@ -57,7 +57,7 @@
 
                 <div class="bottom_div">
 
-                    <a href="admin/login">Login Here</a>
+                    <a href="admin/dashboard">Login Here</a>
 
                 </div>
 

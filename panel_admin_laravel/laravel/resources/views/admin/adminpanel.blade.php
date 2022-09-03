@@ -1,6 +1,8 @@
 @extends('template')
 @section('content')
 
+@if(Auth::user()->is_admin == 1)
+
 <div class="header_div">
 
     <div id="search-bar">
@@ -91,6 +93,17 @@
     </div>
 
 </section>
+
+@else
+
+    <section>
+
+        <h1>acces restreint</h1>
+        <p>connectez vous avec un compte admin pour accéder à cette page</p>
+
+    </section>
+
+@endif
 
 
 @endsection

@@ -1,10 +1,15 @@
 <x-guest-layout>
     <x-auth-card>
         <x-slot name="logo">
-            <a href="/">
-                <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
-            </a>
+
         </x-slot>
+
+        <div class="m-10">
+
+            <h1 class="text-center m-5 display-1">Registration and Login System</h1>
+            <h2 class="text-center m-5 display-2">Create Account</h2>
+
+        </div>
 
         <!-- Validation Errors -->
         <x-auth-validation-errors class="mb-4" :errors="$errors" />
@@ -45,22 +50,32 @@
 
             <!-- Confirm Password -->
             <div class="mt-4">
+
                 <x-label for="password_confirmation" :value="__('Confirm Password')" />
 
                 <x-input id="password_confirmation" class="block mt-1 w-full"
-                                type="password"
-                                name="password_confirmation" required />
+                    type="password"
+                    name="password_confirmation" required />
+                    
             </div>
 
-            <div class="flex items-center justify-end mt-4">
-                <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('login') }}">
-                    {{ __('Already registered?') }}
-                </a>
+            <div class="flex items-center justify-center mt-4">
 
-                <x-button class="ml-4">
+                <x-button class="ml-4 w-25 p-3">
                     {{ __('Register') }}
                 </x-button>
+
             </div>
+
+            <div class="border-top-2 border-secondary m-5">
+
+                <a class="grid text-center" href="/login">Have an account ? Go to login !</a>
+                <a class="grid text-center" href="/">Back to Home</a>
+
+            </div>
+
         </form>
+
     </x-auth-card>
+
 </x-guest-layout>
