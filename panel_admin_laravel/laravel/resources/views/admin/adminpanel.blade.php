@@ -1,6 +1,8 @@
 @extends('template')
 @section('content')
 
+@auth
+
 @if(Auth::user()->is_admin == 1)
 
 <div class="header_div">
@@ -27,9 +29,9 @@
         <div class="box" style="background-color : #0F6DFD;">
 
             <div>
-
-                <h2>Total Registered users : <span>1</span></h2>
-
+            @foreach($nb_users as $key => $data)
+                <h2>Total registred : <span>{{ $data->count() }}</span></h2>
+            @endforeach
             </div>
 
             <div class="bottom_div">
@@ -44,7 +46,9 @@
 
             <div>
 
-                <h2>Yesterday Registered Users : <span>0</span></h2>
+                @foreach($nb_users_today as $key => $data_today)
+                    <h2>Today Registered users : <span>{{ $data_today->count() }}</span></h2>
+                @endforeach
 
             </div>
 
@@ -105,5 +109,6 @@
 
 @endif
 
+@endauth
 
 @endsection

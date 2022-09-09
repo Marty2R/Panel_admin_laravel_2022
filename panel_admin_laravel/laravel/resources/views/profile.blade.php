@@ -18,7 +18,7 @@
 
 <div id="profile">
 
-<a href="#">edite</a>
+    <a href="/profile/edite">edite</a>
 
     <table id="user_table"> <!-- Info utilisateur -->
 

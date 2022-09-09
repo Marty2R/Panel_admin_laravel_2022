@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,7 +24,7 @@ Route::get('/documentation', function () {
     return view('welcome');
 });
 
-// Routes avec Authentification :
+// Routes utilisateur avec Authentification :
 Route::get('/forgot-password', function () {
     return view('auth.forgot-password');
 })->middleware('auth')->name('password.request');
@@ -36,14 +37,14 @@ Route::get('/profile', function () {
     return view('profile');
 })->middleware(['auth'])->name('profile');
 
-// Routes avec Authentification Admin :
-Route::get('/admin/dashboard', function () {
-    return view('admin.adminpanel');
-})->middleware(['auth'])->name('dashboard');
-
-Route::get('/admin/user-manage', function () {
-    $users = DB::table('users')->get();
-    return view('admin.user_manage', compact('users'));
+Route::get('/profile/edite', function () {
+    return view('editeprofile');
 })->middleware(['auth'])->name('profile');
+
+// Routes Admin :
+Route::get('/admin/dashboard', [AdminController::class, 'showAdminDashboard'])->middleware(['auth'])->name('dashboard');
+
+Route::get('/admin/user-manage', [UserController::class, 'showUserManage'])->middleware(['auth'])->name('user-manage');
+Route::get('/admin/edit-user', [AdminController::class, 'showAdminEditeUser'])->middleware(['auth'])->name('user-edite');
 
 require __DIR__.'/auth.php';

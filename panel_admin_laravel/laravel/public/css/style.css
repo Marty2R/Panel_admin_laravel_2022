@@ -96,6 +96,10 @@ header nav ul li .signout:hover {
   font-size: 3rem;
 }
 
+#home #profile form input {
+  display: block;
+}
+
 #home .box_content {
   display: -webkit-box;
   display: -ms-flexbox;
