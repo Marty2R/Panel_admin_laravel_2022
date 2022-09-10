@@ -10,7 +10,7 @@
 - Name : Marty
 - Last name : Marty
 - Email : marty.rabatel2@gmail.com
-- Password : password
+- Password : Password
 
 # Admin dashboard :
 http://127.0.0.1:8000/admin/dashboard

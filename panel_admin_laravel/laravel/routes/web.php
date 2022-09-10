@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
-use App\Http\Controllers\UserController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -40,6 +40,9 @@ Route::get('/profile', function () {
 Route::get('/profile/edite', function () {
     return view('editeprofile');
 })->middleware(['auth'])->name('profile');
+// 
+use App\Http\Controllers\UserController;
+Route::post('/profile', [UserController::class, 'edit']);
 
 // Routes Admin :
 Route::get('/admin/dashboard', [AdminController::class, 'showAdminDashboard'])->middleware(['auth'])->name('dashboard');

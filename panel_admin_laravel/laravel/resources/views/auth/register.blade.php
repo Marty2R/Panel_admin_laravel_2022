@@ -15,6 +15,7 @@
         <x-auth-validation-errors class="mb-4" :errors="$errors" />
 
         <form method="POST" action="{{ route('register') }}">
+
             @csrf
 
             <!-- Name -->
@@ -24,7 +25,7 @@
                 <x-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus />
             </div>
 
-            <!-- Name -->
+            <!-- Last Name -->
             <div>
                 <x-label for="last_name" :value="__('Last name')" />
 

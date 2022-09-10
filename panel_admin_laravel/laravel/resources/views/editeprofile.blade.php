@@ -20,18 +20,31 @@
 
     <div> <a href="/profile">profile</a> / edite</div>
 
-    <form action="/edite-user-profile" method='Post'>
+    <form action="/profile" method='POST'>
 
-        <input style="display : block; margin : 10px; padding : 5px; width : 300px" type="text" name="name" value="{{ Auth::user()->name }}">
-        <input style="display : block; margin : 10px; padding : 5px; width : 300px" type="text" name="last-name" value="{{ Auth::user()->last_name }}">
-        <input style="display : block; margin : 10px; padding : 5px; width : 300px" type="email" name="email" value="{{ Auth::user()->email }}">
+        @csrf
 
-        <input style="display : block; margin : 10px; padding : 5px; width : 300px" type="password" name="password" value="{{ Auth::user()->password }}">
+        <div class="form-group">
 
-        <!-- Date de la modification -->
-        <input type="hidden" name="updated_at" value="{{ date('Y-m-d H:i:s') }}">
+            <!-- Id de l'utilisateur -->
+            <input type="hidden" name="id" value="{{ Auth::user()->id }}">
 
-        <button type="submit">Edite</button>
+            <input style="display : block; margin : 10px; padding : 5px; width : 300px" type="text" name="name" value="{{ Auth::user()->name }}">
+            <input style="display : block; margin : 10px; padding : 5px; width : 300px" type="text" name="last_name" value="{{ Auth::user()->last_name }}">
+            <input style="display : block; margin : 10px; padding : 5px; width : 300px" type="email" name="email" value="{{ Auth::user()->email }}">
+
+            <!-- Mot de passe initial -->
+            <input type="hidden" name="password" value="{{ Auth::user()->password }}">
+            <!-- Date de la modification -->
+            <input type="hidden" name="updated_at" value="{{ date('Y-m-d H:i:s') }}">
+            <!-- Date de la création initial -->
+            <input type="hidden" name="created_at" value="{{ Auth::user()->created_at }}">
+            <!-- Rôle de l'utilisateur -->
+            <input type="hidden" name="is_admin" value="{{ Auth::user()->is_admin }}">
+
+            <button type="submit">Edite</button>
+    
+        </div>
 
     </form>
 
