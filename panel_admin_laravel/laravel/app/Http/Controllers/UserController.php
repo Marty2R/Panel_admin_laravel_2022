@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Auth;
 use App\Models\User;
 
 class UserController extends Controller
@@ -30,7 +31,7 @@ class UserController extends Controller
 
     }
 
-    public function edit(Request $request) {
+    public function edit(Request $request) { // Modifie les données de l'utilisateur connecté :
         // la méthode qui récupèrera les données du formulaire
 
         // Modifie les données dans la base de données :
@@ -48,6 +49,22 @@ class UserController extends Controller
 
         // redirige vers la page profile :
         return redirect('/profile');
+
+    }
+
+    public function editPassword() { // fonction qui modifie le mot de passe utilisateur :
+
+        $pass = Auth::user()->password;
+
+        if (password_verify(request('actual_password'), $pass)) {
+
+            $user = User::find(request('id'));
+            $user->password = bcrypt(request('new_password'));
+            return redirect('/profile');
+            
+        }
+
+        return redirect('/password-edite');
 
     }
 

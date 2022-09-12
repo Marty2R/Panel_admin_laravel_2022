@@ -42,7 +42,7 @@
             <!-- Rôle de l'utilisateur -->
             <input type="hidden" name="is_admin" value="{{ Auth::user()->is_admin }}">
 
-            <button type="submit">Edite</button>
+            <button type="submit" class="btn btn-primary">Edite</button>
     
         </div>
 

@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
-
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -40,9 +40,14 @@ Route::get('/profile', function () {
 Route::get('/profile/edite', function () {
     return view('editeprofile');
 })->middleware(['auth'])->name('profile');
-// 
-use App\Http\Controllers\UserController;
+// POST modification des données de l'utilisateur :
 Route::post('/profile', [UserController::class, 'edit']);
+
+Route::get('/password-edite', function () {
+    return view('passwordedite');
+})->middleware(['auth'])->name('password-edite');
+// POST modification des données de l'utilisateur :
+Route::post('/change-password', [UserController::class, 'editPassword']);
 
 // Routes Admin :
 Route::get('/admin/dashboard', [AdminController::class, 'showAdminDashboard'])->middleware(['auth'])->name('dashboard');

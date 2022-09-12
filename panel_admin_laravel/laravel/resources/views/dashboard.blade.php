@@ -32,7 +32,7 @@
 
             <div class="bottom_div">
 
-                <a href="#">View Profile</a>
+                <a href="/profile">View Profile</a>
 
             </div>
 

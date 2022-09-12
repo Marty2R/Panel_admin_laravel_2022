@@ -24,18 +24,19 @@
 
     <table id="user_table"> <!-- Liste des utilisateurs -->
 
-    @foreach($users as $key => $data)
+        @foreach($users as $key => $data)
 
-        <tr>
+            <tr>
 
-            <td>{{ $data->id }}</td>
-            <td>{{ $data->name }}</td>
-            <td>{{ $data->last_name }}</td>
-            <td>{{ $data->email }}</td>
-            <td>{{ $data->created_at }}</td>
-        </tr>
+                <td>{{ $data->id }}</td>
+                <td>{{ $data->name }}</td>
+                <td>{{ $data->last_name }}</td>
+                <td>{{ $data->email }}</td>
+                <td>{{ $data->created_at }}</td>
+                
+            </tr>
 
-    @endforeach
+        @endforeach
 
     </table>
 

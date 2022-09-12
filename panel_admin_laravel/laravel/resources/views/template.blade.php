@@ -31,7 +31,7 @@
 
                     <li><a href="/dashboard"> <i class="fas fa-chart-line"></i> Dashboard</a></li>
                     <li><a href="/profile"> <i class="fas fa-users"></i> Profile</a></li>
-                    <li><a href="/change_password"> <i class="fas fa-key"></i> Change Password</a></li>
+                    <li><a href="/password-edite"> <i class="fas fa-key"></i> Change Password</a></li>
                     <!-- Déconnection -->
                     <li>
                         <form method="POST" action="{{ route('logout') }}">
