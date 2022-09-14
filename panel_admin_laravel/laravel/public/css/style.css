@@ -96,6 +96,10 @@ header nav ul li .signout:hover {
   font-size: 3rem;
 }
 
+#home #user_table tr {
+  border: solid 1px black;
+}
+
 #home #profile form input {
   display: block;
 }

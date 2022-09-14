@@ -40,6 +40,13 @@
                         <button type="submit"><i class="fas fa-trash"></i></button>
                     </form>
                 </td>
+                <td>
+                    <form action="/edite-user" method='POST'>
+                        @csrf
+                        <input type="hidden" name="id" value="{{ $data->id }}">
+                        <button type="submit">Edite</button>
+                    </form>
+                </td>
                 
             </tr>
 

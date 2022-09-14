@@ -57,5 +57,10 @@ Route::get('/admin/user-manage', [UserController::class, 'showUserManage'])->mid
 Route::post('/delet-user', [AdminController::class, 'deletUser']);
 
 Route::get('/admin/edit-user', [AdminController::class, 'showAdminEditeUser'])->middleware(['auth'])->name('user-edite');
+// envoie l'id de l'utilisateur à modifier dans le controller qui affiche le formulaire d'édition :
+Route::post('/edite-user', [AdminController::class, 'editeUser']);
+
+Route::get('/user_edite_form', [AdminController::class, 'editeUser']);
+Route::post('/edite-user-form', [AdminController::class, 'editUserRequet']);
 
 require __DIR__.'/auth.php';

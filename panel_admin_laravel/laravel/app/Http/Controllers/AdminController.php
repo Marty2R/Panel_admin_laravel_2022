@@ -29,7 +29,7 @@ class AdminController extends Controller
 
     }
 
-    public function deletUser(Request $request) {
+    public function deletUser(Request $request) { // Supprime un utilisateur de la base de données :
 
         $user = User::where('id', request('id'))->delete();
 
@@ -37,7 +37,29 @@ class AdminController extends Controller
 
     }
 
-    public function showAdminEditeUser() {
+    public function editeUser() { // Récupére les information de l'utilisateur et les affiches dans la vue formulaire :
+
+        $id = request('id');
+
+        $user = User::where('id', $id)->get();
+
+        return view('admin.user_edite_form', compact('id', 'user'));
+
+    }
+
+    public function editUserRequet() {
+
+        $user = User::find(request('id'));
+        $user->name = request('name');
+        $user->last_name = request('last_name');
+        $user->email = request('email');
+        $user->save();
+
+        return redirect('/admin/user-manage');
+
+    }
+
+    public function showAdminEditeUser() { // Affiche la vue admin édition d'utilisateur :
 
         return view('adminediteuser');
 
