@@ -46,9 +46,9 @@
 
             <div>
 
-                @foreach($nb_users_today as $key => $data_today)
+                <!-- @foreach($nb_users_today as $key => $data_today)
                     <h2>Today Registered users : <span>{{ $data_today->count() }}</span></h2>
-                @endforeach
+                @endforeach -->
 
             </div>
 

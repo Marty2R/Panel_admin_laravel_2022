@@ -40,19 +40,22 @@ Route::get('/profile', function () {
 Route::get('/profile/edite', function () {
     return view('editeprofile');
 })->middleware(['auth'])->name('profile');
-// POST modification des données de l'utilisateur :
+// POST formulaire modification des données de l'utilisateur :
 Route::post('/profile', [UserController::class, 'edit']);
 
 Route::get('/password-edite', function () {
     return view('passwordedite');
 })->middleware(['auth'])->name('password-edite');
-// POST modification des données de l'utilisateur :
+// POST formulaire change password :
 Route::post('/change-password', [UserController::class, 'editPassword']);
 
 // Routes Admin :
 Route::get('/admin/dashboard', [AdminController::class, 'showAdminDashboard'])->middleware(['auth'])->name('dashboard');
 
 Route::get('/admin/user-manage', [UserController::class, 'showUserManage'])->middleware(['auth'])->name('user-manage');
+// POST formulaire user delete :
+Route::post('/delet-user', [AdminController::class, 'deletUser']);
+
 Route::get('/admin/edit-user', [AdminController::class, 'showAdminEditeUser'])->middleware(['auth'])->name('user-edite');
 
 require __DIR__.'/auth.php';

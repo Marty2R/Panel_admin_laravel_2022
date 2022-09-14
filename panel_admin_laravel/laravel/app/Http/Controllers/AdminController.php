@@ -14,7 +14,7 @@ class AdminController extends Controller
     public function showAdminDashboard() {
 
         // Total des utilisateurs :
-        $nb_users = User::where('created_at', '2022-09-08 22:36:51')->get();
+        $nb_users = User::all();
 
         // Utilisateurs ajouté aujourd'hui :
         $nb_users_today = User::whereBetween('created_at', ["01-01-2000 00:00:00", date('Y-m-d')."23:59:59"])->get();
@@ -26,6 +26,14 @@ class AdminController extends Controller
         $nb_users_today = User::where('created_at', '2022-09-08 22:36:51')->get();
 
         return view('admin.adminpanel', compact('nb_users', 'nb_users_today'));
+
+    }
+
+    public function deletUser(Request $request) {
+
+        $user = User::where('id', request('id'))->delete();
+
+        return redirect('/admin/user-manage');
 
     }
 

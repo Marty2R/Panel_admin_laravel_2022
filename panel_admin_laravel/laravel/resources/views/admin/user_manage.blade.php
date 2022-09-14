@@ -33,6 +33,13 @@
                 <td>{{ $data->last_name }}</td>
                 <td>{{ $data->email }}</td>
                 <td>{{ $data->created_at }}</td>
+                <td>
+                    <form action="/delet-user" method='POST'>
+                        @csrf
+                        <input type="hidden" name="id" value="{{ $data->id }}">
+                        <button type="submit"><i class="fas fa-trash"></i></button>
+                    </form>
+                </td>
                 
             </tr>
 
