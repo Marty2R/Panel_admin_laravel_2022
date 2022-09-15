@@ -1,5 +1,7 @@
 # - Projet Laravel -
 
+- Installer bootstrap pour le front du login / register !
+
 # Login Admin : 
 - Name : Admin
 - Last name : Principal
@@ -17,3 +19,4 @@
 
 # Fonctionnalités :
 https://docs.google.com/spreadsheets/d/16DKpYpNZ10kPV9LKsBz4NwzQrc0H5Hv93tWlQVwaNa8/edit?usp=sharing
+
